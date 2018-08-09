@@ -4,14 +4,7 @@ class Header extends React.Component {
   render() {
     return (
       <header>
-        <h1>Logo</h1>
-        <nav>
-          <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Contact</li>
-          </ul>
-        </nav>
+        <h1>BnB On Space</h1>
       </header>
     )
   }

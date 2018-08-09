@@ -1,18 +1,33 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Header from './components/Header';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      spaces: [
+        {
+          id: 1,
+          title: 'Cozy room in space',
+          thumbnail: './img/SpaceX/21236949258_b9b916f54f_k.jpg',
+        },
+        {
+          id: 2,
+          title: 'Cozy room in space station',
+          thumbnail: './img/SpaceX/17076243136_e0d0a52e72_k.jpg',
+        },
+      ],
+    };
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          Welcome to KODE
-        </p>
+      <div>
+        <Header />
+        <input type="text" placeholder="Search space..." />
+        {this.state.spaces.map(space => (
+          <img key={space.id} src={space.thumbnail} alt={space.title} />
+        ))}
       </div>
     );
   }
