@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Header from './components/Header';
+import Footer from './components/Footer';
+import styles from './styles';
 
 class App extends Component {
   constructor() {
@@ -16,18 +18,41 @@ class App extends Component {
           title: 'Cozy room in space station',
           thumbnail: './img/SpaceX/17076243136_e0d0a52e72_k.jpg',
         },
+        {
+          id: 3,
+          title: 'Nice room in the rooftop',
+          thumbnail: './img/SpaceX/16851653497_3677957464_k.jpg',
+        },
       ],
     };
   }
 
   render() {
     return (
-      <div>
+      <div style={styles.container}>
         <Header />
-        <input type="text" placeholder="Search space..." />
-        {this.state.spaces.map(space => (
-          <img key={space.id} src={space.thumbnail} alt={space.title} />
-        ))}
+        <div style={styles.searchBar}>
+          <input
+            style={styles.searchInput}
+            type="text"
+            placeholder="Search space..."
+          />
+        </div>
+        <div style={styles.spaces}>
+          {this.state.spaces.map(space => (
+            <div key={space.id}>
+              <img
+                style={styles.thumbnail}
+                src={space.thumbnail}
+                alt={space.title}
+              />
+              <h3>
+                {space.title}
+              </h3>
+            </div>
+          ))}
+        </div>
+        <Footer />
       </div>
     );
   }
