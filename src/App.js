@@ -10,7 +10,7 @@ class App extends Component {
       spaces: [
         {
           id: 1,
-          title: 'Cozy room in space',
+          title: 'Cozy room in Mars',
           thumbnail: './img/SpaceX/21236949258_b9b916f54f_k.jpg',
         },
         {
